@@ -1,4 +1,4 @@
-# Introduction to Java
+# ㅜ Introduction to Java
 
 ----
 
@@ -62,9 +62,180 @@
 
 # static
 
-> static 키워드 역할, 
+> static 키워드 역할
 
 ## 1. `static` 으로 선언된 함수(메서드)나 변수는 자바 버추얼 머신에서 인스턴스 객체의 생성 없이 호출을 할 수 있다
 
 - aka 객체 생성없이 해당 함수(메서드)를 호출해서 사용할 수 있다
--  
+- 자바 프로그램을 실행하면 `static`으로 지정된 메서드를 찾아서 먼저 메모리에 할당시킨다
+- `static`으로 지정된 메서드가 여러개인 경우에는 객체를 생성하는 것과 상관없이 모두 메모리에 할당시킨다.
+- 그런 후에, `"main"` 으로 이름이 만들어진 메서드가 있는지를 찾아서 그 메서드를 가장 먼저 시작점의 메서드로써 호출을 하게 되는 것이다.
+
+
+
+--------------
+
+#  변수
+
+> 변수란, 변수 선언이란, 변수의 용도와 왜 필요한지
+
+## 1. 변수란 무엇인가
+
+- aka 바구니 -> 데이터를 저장하는 메모리 공간이다 -> 변하는 수
+
+
+
+## 2. 변수 선언이란 무엇인가
+
+- 변수를 사용하기 위해서는 먼저 변수의 타입에 맞는 선언을 해줘야 한다
+- 정수형의 변수르 ㄹ사용하고자 한다면 -> 먼저 정수형 타입의 자료형을 선언해주고 사용해야 한다 -> 데이터타입(자료형) 에 대해서는 뒤에...
+
+
+
+## 3. 변수의 용도
+
+- 저장
+- 어떤 연산을 수행할 때 값들을 저장해놓아야 하는데 그떄 변수(바구니)를 활용한다
+
+
+
+## 4. 변수가 왜 필요한가 
+
+- "
+
+```java
+publc class Java100_variable_001 {
+  public static void main(String[] args) {
+    
+    int a;     // 정수가 저장될 변수 이름을 a로 만들어라
+   	int b;
+    int sum;
+    
+    a = 3;
+    b = 4;
+    
+    sum = a + b;
+    System.out.println(a);
+    System.out.println(b);
+    System.out.println(sum);    // 7
+    
+    sum = a + b + a;
+    System.out.println(sum);   // 10
+    
+  }
+}
+```
+
+
+
+-------
+
+# 데이터 타입
+
+> 타입 , 사이즈, 
+
+
+
+## 1. 크게 봤을 때 : 기본형 타입, 참조형 타입
+
+
+
+
+
+
+
+## 2. 기본형 타입(Primitive Daa Type) 8개
+
+- 정수형 : byte (1 byte), short (2), int (4), long (8)
+
+
+
+- 실수형 : float (4), double (8)
+
+
+
+- 문자형 : char (2byte) -> 문자 1개 -> 참고로, 문자열을 다루는 타입은 없다
+
+
+
+- 부울형(논리형 : 참 or 거짓) : boolean (1 byte) -> true, false
+
+
+
+## 3. 참조형 타입 (Reference Data Type) - 위 기본형에 속하지 않는 데이터형들
+
+- 클래스 (class) , 배열 (array), 인터페이스 (interface) , 문자열 (String/immutable) ...
+
+- 참조형 변수의 특징 : 데이터가 저장된 메모리의 주소 값을 저장하는 변수이다
+- Ex) 고래(데이터)가 무거우니까 고래 위치(주소) 를 저장해서 필요할 때 폰(참조형 변수)으로 그 위치를 참조해서 그 위치를 찾아가자. 고래 고기 먹고싶으면 내 핸폰을 열면 돼 . 그 위치 찾아가면 고래고기가 있엉
+
+
+
+------------
+
+
+
+# Primitive Data Type
+
+
+
+## 1. Primitive Data Type 의 바이트 크기와 비트 크기를 출력
+
+> 이 때 , 각 타입의 최댓값과 최솟값도 같이 출력
+
+```java
+public class Java100_variable_003 {
+  public static void main(String[] args) {
+    
+    // byte, short, int, long, char
+    // Byte, Short, Integer, Long, Character
+    System.out.println(Byte.BYTES);    // 바이트 계산 1byte
+    System.out.println(Byte.SIZE);     // 비트 계산 8 bit
+    System.out.println("short:" + Short.BYTES + "(바이트)" + "-->" + Short.SIZE + "(비트)"₩t + Short.MAX_VALUE);
+    
+    
+  }
+}
+```
+
+
+
+- `char` 타입 : 범위의 최솟값 최댓값 출력은 오류가 난다. Why? `(int)Character.MIN_VALUE` 형태로 바꿔줘야한다
+
+
+
+------
+
+# 변수 선언 및 사용 시 주의사항
+
+> 정수,실수,문자형 타입
+
+## 예제
+
+```java
+public class Java100_variable_DataType1 {
+  public static void main(String[] args) {
+    
+    // 1. 변수 선언
+    int a; // 정수가 저장될 변수 이름ㅇ르 a 로 만들어라
+    int b; int c = 90;
+    double d;
+    char e;
+    
+    // 2. 선언된 변수에 값을 대입
+    a = 10;
+    d = 10;  // 정수 10을 입력하면 10.0으로 출력
+    e = "A"  // 쌍따옴표하면 에러
+      
+   // 3. 출력
+    System.out.println(a);   // 10
+    System.out.println(b);   // Err
+    System.out.println(c);   // 90
+    System.out.println(d);   // 10.0
+    System.out.println(e);   // Err 
+  }
+}
+```
+
+
+
