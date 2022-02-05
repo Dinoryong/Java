@@ -235,7 +235,109 @@ public class Java100_variable_DataType1 {
     System.out.println(e);   // Err 
   }
 }
+
+// 4. 
+String str1, str2, str3;
+str1 = str2 = str3. = "Lemon";
+System.out.println("[4-4] 여러 문자열 변수 한꺼번에 초기화" + str1 + str2 + str3);
 ```
+
+
+
+-----------
+
+ 
+
+# 기본형 타입
+
+> 기본형 타입의 값을 초기화하는 방법
+>
+> 기본형 타입 8개 : 변수 선언과 동시에 값을 입력
+
+
+
+```java
+public class Java100_variable_DataType2 {
+  public static void main(String[] args) {
+    
+    // [1] : 기본형 타입 --> 8개 --> 변수 선언과 동시에 값을 입력
+    byte b = 100;
+    short s = 30000;
+    int i = 2100000000;
+    long l = 7000000000;     // 700000000L; 소문자도 되긴 하지만 거의 대문자로 쓴다
+    float f = 9.8;           // 9.8F;
+    double d = 3.14;
+    char c ='A';
+    boolean bl = false;
+    
+    // [2] : 출력
+    System.out.println(b + "최댓값-->" + Byte.MAX_VALUE);
+    System.out.println(s + "최댓값-->" + Short.MAX_VALUE);
+    System.out.println(i + "최댓값-->" + Integer.MAX_VALUE);
+    System.out.println(l);
+    System.out.println(f);
+    System.out.println(d);
+    System.out.println(c);
+    System.out.println(bl);
+  }
+}
+```
+
+
+
+---------
+
+
+
+# 정수형과 문자형 타입 변환
+
+> 정수형 변수를 문자형으로 형Type 변환
+
+
+
+```java
+public clas Java100_variable_DataType3 {
+  public static void main(String[] args) {
+    
+    // [1]
+    short a = 'A';
+    System.out.println(a);    // 65 (아스키코드 값을 출력)
+    
+    
+  }
+}
+
+
+
+
+// [2]
+
+
+
+
+
+// [3]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
